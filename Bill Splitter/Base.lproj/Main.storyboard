@@ -1,25 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="QLY-i9-VFr"/>
+                        <viewControllerLayoutGuide type="bottom" id="RDX-jF-w0S"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CjP-nD-1t8">
+                                <rect key="frame" x="16" y="34" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="9Y9-nC-dXd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="2" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="qII-KY-aOX">
+                                <rect key="frame" x="14" y="118" width="292" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="G5p-yZ-6at"/>
+                                </constraints>
+                                <color key="minimumTrackTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="calculateSplitAmount:" destination="vXZ-lx-hvc" eventType="valueChanged" id="gCy-bV-f98"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2jS-kX-MBh">
+                                <rect key="frame" x="137" y="269" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculateSplitAmount:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Kzy-K4-ZAc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FkZ-75-Xm2">
+                                <rect key="frame" x="16" y="409" width="288" height="21"/>
+                                <color key="backgroundColor" red="0.27673178170000001" green="0.1004583706" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="etu-zi-Xlp"/>
+                                    <constraint firstAttribute="height" constant="21" id="g1L-lm-SZy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Each of us have to pay:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONi-Yc-znh">
+                                <rect key="frame" x="67" y="347" width="186" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="WNh-ye-sMy"/>
+                                    <constraint firstAttribute="height" constant="21" id="fix-RM-0k9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="2jS-kX-MBh" secondAttribute="centerX" id="0Nb-xr-bVL"/>
+                            <constraint firstAttribute="centerX" secondItem="qII-KY-aOX" secondAttribute="centerX" id="M6b-xP-Kl6"/>
+                            <constraint firstItem="ONi-Yc-znh" firstAttribute="top" secondItem="2jS-kX-MBh" secondAttribute="bottom" constant="48" id="TdV-7Z-skg"/>
+                            <constraint firstItem="RDX-jF-w0S" firstAttribute="top" secondItem="FkZ-75-Xm2" secondAttribute="bottom" constant="138" id="UWZ-5l-of2"/>
+                            <constraint firstAttribute="centerX" secondItem="ONi-Yc-znh" secondAttribute="centerX" id="VWM-nd-Sxl"/>
+                            <constraint firstItem="qII-KY-aOX" firstAttribute="top" secondItem="QLY-i9-VFr" secondAttribute="bottom" constant="98" id="YXZ-ec-PeF"/>
+                            <constraint firstAttribute="centerX" secondItem="FkZ-75-Xm2" secondAttribute="centerX" id="cdI-yE-FlD"/>
+                            <constraint firstAttribute="centerY" secondItem="2jS-kX-MBh" secondAttribute="centerY" id="crz-JW-yV6"/>
+                            <constraint firstAttribute="centerX" secondItem="CjP-nD-1t8" secondAttribute="centerX" id="lvr-sf-4ys"/>
+                            <constraint firstItem="CjP-nD-1t8" firstAttribute="top" secondItem="QLY-i9-VFr" secondAttribute="bottom" constant="14" id="wMn-nS-0mY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amountOfBillForEachPerson" destination="FkZ-75-Xm2" id="Dlj-jF-E7O"/>
+                        <outlet property="rangeOfPeople" destination="qII-KY-aOX" id="vU4-Ll-N5s"/>
+                        <outlet property="totalBillEntered" destination="CjP-nD-1t8" id="SSq-LQ-bzV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="162" y="346"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
